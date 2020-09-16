@@ -27,7 +27,7 @@ extern "C" {
 #define HDPATH_LEN_DEFAULT   5
 
 #define HDPATH_0_DEFAULT     (0x80000000u | 0x2cu)
-#define HDPATH_1_DEFAULT     (0x80000000u | 0x76u)
+#define HDPATH_1_DEFAULT     (0x80000000u | 0x18au)
 #define HDPATH_2_DEFAULT     (0x80000000u | 0u)
 #define HDPATH_3_DEFAULT     (0u)
 #define HDPATH_4_DEFAULT     (0u)
@@ -41,18 +41,18 @@ typedef enum {
 #define VIEW_ADDRESS_OFFSET_SECP256K1       PK_LEN_SECP256K1
 #define VIEW_ADDRESS_LAST_PAGE_DEFAULT      0
 
-#define MENU_MAIN_APP_LINE1                "Cosmos"
+#define MENU_MAIN_APP_LINE1                "Crypto"
 #define MENU_MAIN_APP_LINE2                "ready"
 #define APPVERSION_LINE1                   "Version:"
 #define APPVERSION_LINE2                   ("v" APPVERSION)
 
 #define CRYPTO_BLOB_SKIP_BYTES              0
-#define COIN_DEFAULT_CHAINID                "cosmoshub-3"
+#define COIN_DEFAULT_CHAINID                "test"
 
-// In non-expert mode, the app will convert from uatom to ATOM
-#define COIN_DEFAULT_DENOM_BASE             "uatom"
-#define COIN_DEFAULT_DENOM_REPR             "ATOM"
-#define COIN_DEFAULT_DENOM_FACTOR           6
+// In non-expert mode, the app will convert from basecro to CRO
+#define COIN_DEFAULT_DENOM_BASE             "basecro"
+#define COIN_DEFAULT_DENOM_REPR             "CRO"
+#define COIN_DEFAULT_DENOM_FACTOR           8
 
 #ifdef __cplusplus
 }

@@ -19,7 +19,7 @@ const example_tx_str = {
         "amount": [
             {
                 "amount": "600",
-                "denom": "uatom"
+                "denom": "basecro"
             }
         ],
         "gas": "200000"
@@ -29,8 +29,8 @@ const example_tx_str = {
         {
             "type": "cosmos-sdk/MsgWithdrawDelegationReward",
             "value": {
-                "delegator_address": "cosmos19umvgcvk8cxsvzemy239nj9ngc2ltukantgyp3",
-                "validator_address": "cosmosvaloper1648ynlpdw7fqa2axt0w2yp3fk542junl7rsvq6"
+                "delegator_address": "cro19umvgcvk8cxsvzemy239nj9ngc2ltukantgyp3",
+                "validator_address": "crovaloper1648ynlpdw7fqa2axt0w2yp3fk542junl7rsvq6"
             }
         },
         {
@@ -38,10 +38,10 @@ const example_tx_str = {
             "value": {
                 "amount": {
                     "amount": "20139397",
-                    "denom": "uatom"
+                    "denom": "basecro"
                 },
-                "delegator_address": "cosmos19umvgcvk8cxsvzemy239nj9ngc2ltukantgyp3",
-                "validator_address": "cosmosvaloper1648ynlpdw7fqa2axt0w2yp3fk542junl7rsvq6",
+                "delegator_address": "cro19umvgcvk8cxsvzemy239nj9ngc2ltukantgyp3",
+                "validator_address": "crovaloper1648ynlpdw7fqa2axt0w2yp3fk542junl7rsvq6",
             }
         }
     ],
@@ -67,7 +67,7 @@ async function debugScenario(sim, app) {
 
 //    await Zemu.default.sleep(120000);
 
-    const addr = await app.getAddressAndPubKey(path, "cosmos");
+    const addr = await app.getAddressAndPubKey(path, "cro");
     console.log(addr)
 
     console.log(tx);
