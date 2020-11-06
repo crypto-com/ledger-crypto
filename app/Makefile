@@ -25,9 +25,9 @@ MY_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include $(BOLOS_SDK)/Makefile.defines
 
 # Main app configuration
-APPNAME = "Crypto"
-APPVERSION_M=2
-APPVERSION_N=16
+APPNAME = "Crypto.com Chain"
+APPVERSION_M=0
+APPVERSION_N=7
 APPVERSION_P=0
 
 APPPATH = "44'/394'"
@@ -51,13 +51,17 @@ all: default
 	@echo "APPNAME=\"${APPNAME}\"" >> $(CURDIR)/pkg/zxtool.sh
 	@echo "APPVERSION=\"${APPVERSION}\"" >> $(CURDIR)/pkg/zxtool.sh
 	@echo "APPPATH=\""${APPPATH}"\"" >> $(CURDIR)/pkg/zxtool.sh
-	@echo "LOAD_PARAMS=\"${COMMON_LOAD_PARAMS}\"" >> $(CURDIR)/pkg/zxtool.sh
-	@echo "DELETE_PARAMS=\"${COMMON_DELETE_PARAMS}\"" >> $(CURDIR)/pkg/zxtool.sh
+	@echo "LOAD_PARAMS='${COMMON_LOAD_PARAMS}'" >> $(CURDIR)/pkg/zxtool.sh
+	@echo "DELETE_PARAMS='${COMMON_DELETE_PARAMS}'" >> $(CURDIR)/pkg/zxtool.sh
 	@echo "APPHEX=\"" >> $(CURDIR)/pkg/zxtool.sh
 	@cat $(CURDIR)/bin/app.hex >> $(CURDIR)/pkg/zxtool.sh
 	@echo "\"" >> $(CURDIR)/pkg/zxtool.sh
 	@cat $(CURDIR)/../deps/ledger-zxlib/scripts/template.sh >> $(CURDIR)/pkg/zxtool.sh
 	@chmod +x $(CURDIR)/pkg/zxtool.sh
+
+# Patch SDK
+COMMON_LOAD_PARAMS=--tlv --targetId $(TARGET_ID) --targetVersion="$(TARGET_VERSION)" --delete --fileName bin/app.hex --appName \"$(APPNAME)\" --appVersion $(APPVERSION) --dataSize $$((0x`cat debug/app.map |grep _envram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x'` - 0x`cat debug/app.map |grep _nvram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x'`)) `ICONHEX=\`python3 $(BOLOS_SDK)/icon3.py --hexbitmaponly $(ICONNAME)  2>/dev/null\` ; [ ! -z "$$ICONHEX" ] && echo "--icon $$ICONHEX"` $(PARAM_SCP)
+COMMON_DELETE_PARAMS=--targetId $(TARGET_ID) --appName \"$(APPNAME)\" $(PARAM_SCP)
 
 ############
 # Platform
