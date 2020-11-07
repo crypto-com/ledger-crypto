@@ -44,7 +44,9 @@ echo -e "${APPHEX}" > ${BIN_HEX_FILE}
 case "$1" in
   'load')
   cd "$TMP_HEX_DIR" || exit
-  CMD="python3 -m ledgerblue.loadApp --appFlags 0x200 --delete --path ${APPPATH} --path "44'/1'" ${LOAD_PARAMS}"
+  # python3 -m ledgerblue.loadApp --appFlags 0x200 --delete ${LOAD_PARAMS} --path ${APPPATH} --path "44'/1'"
+  CMD="python3 -m ledgerblue.loadApp --appFlags 0x200 --delete ${LOAD_PARAMS} --path \"${APPPATH}\" --path \""44\'/1\'"\""
+  echo $CMD
   eval "$CMD";
   ;;
   'delete')
