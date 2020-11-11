@@ -1,16 +1,16 @@
-# Ledger Cosmos app
+# Ledger Crypto.com Chain app
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CircleCI](https://circleci.com/gh/Zondax/ledger-cosmos.svg?style=shield)](https://circleci.com/gh/Zondax/ledger-cosmos)
-[![CodeFactor](https://www.codefactor.io/repository/github/zondax/ledger-cosmos/badge)](https://www.codefactor.io/repository/github/zondax/ledger-cosmos)
 
-This project contains the Cosmos app for Ledger Nano S and X.
+This project contains the Crypto.com Chain app for Ledger Nano S and X.
 
-- Ledger Nano S/X Cosmos app
+- Ledger Nano S/X Crypto.com Chain app
 - Specs / Documentation
-- C++ unit tests
+- C++ unit tests 
 - Zemu tests
 
-The Cosmos app is already available in [Ledger Live](https://www.ledger.com/pages/ledger-live). Our preferred and recommended hardware wallet!
+The Crypto.com Chain app will be available in [Ledger Live](https://www.ledger.com/pages/ledger-live) in development mode.
+In the meantime, you can use the Cosmos app from Ledger Live (just make sure to pass `--coin-type=118 --account=0` flags to chain-maind
+or configure the HD path in your preferred wallet):
 
 - Open Ledger Live and go to Settings (gear icon on the right):
 
