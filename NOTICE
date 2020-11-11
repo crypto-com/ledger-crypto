@@ -1,0 +1,10 @@
+Ledger Crypto.com Chain app
+Copyright 2020, Foris Limited ("Crypto.com"). 
+
+This project is based on the code from the following project:
+
+* Ledger Cosmos app
+ * Copyright: Copyright (c) 2018-2020 Zondax GmbH
+ * License: Apache License 2.0
+ * Repository: https://github.com/cosmos/ledger-cosmos
+
