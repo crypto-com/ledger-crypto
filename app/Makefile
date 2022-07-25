@@ -1,6 +1,6 @@
 #*******************************************************************************
 #   Ledger App
-#   (c) 2020 Foris Limited ("Crypto.com")
+#   (c) 2020 Crypto.com
 #   (c) 2018-2020 Zondax GmbH
 #   (c) 2017 Ledger
 #
